@@ -1,0 +1,13 @@
+.hit-marker-factory {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: 50%;
+    left: 10%;
+}
+
+.hit-marker-factory-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

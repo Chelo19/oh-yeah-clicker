@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { GameContext } from "../../context/GameContext";
 import { DinosaurFactory } from "./DinosaurFactory/DinosaurFactory";
+import { HitMarkerFactory } from "./HitMarkerFactory/HitMarkerFactory";
 import { SniperFactory } from "./SniperFactory/SniperFactory";
 import { TankFactory } from "./TankFactory/TankFactory";
 
@@ -15,6 +16,8 @@ export const FactoryList = () => {
                 return <SniperFactory key={factory.id} factory={factory} />;
             case 'dinosaur':
                 return <DinosaurFactory key={factory.id} factory={factory} />;
+            case 'hitMarker':
+                return <HitMarkerFactory key={factory.id} factory={factory} />;
             default:
                 return null;
         }
@@ -25,8 +28,7 @@ export const FactoryList = () => {
     }
 
     return (
-        <div className="factories-container" style={{ color: '#000000' }}>
-            <h3>Your Factories:</h3>
+        <div className="factories-container">
             {state.factories.map(renderFactory)}
         </div>
     );

@@ -4,15 +4,17 @@ import { GameContext } from "../../context/GameContext";
 import './BuyButtons.css';
 
 // Importar todas las imágenes de factories
-import tankImage from '../../assets/factory-tank.png';
-import sniperImage from '../../assets/factory-sniper.png';
-import dinosaurImage from '../../assets/factory-dinosaur.png';
+import dinosaurImage from '../../assets/FactoryDinosaur/factory-dinosaur.png';
+import hitMarkerImage from '../../assets/FactoryHitMarker/factory-hit-marker.png';
+import sniperImage from '../../assets/FactorySniper/factory-sniper.png';
+import tankImage from '../../assets/FactoryTank/factory-tank.png';
 
 // Objeto para mapear tipos de factory con sus imágenes
 const factoryImages: { [key: string]: string } = {
     tank: tankImage,
     sniper: sniperImage,
     dinosaur: dinosaurImage,
+    hitMarker: hitMarkerImage,
 };
 
 // Función para obtener la imagen de una factory
@@ -37,16 +39,16 @@ const FactoryButton = ({ factoryType, factoryData, hasFactory, canAfford, onBuy 
     if (hasFactory || !canAfford) return null;
 
     return (
-        <button 
-            data-tooltip-id="my-tooltip" 
-            data-tooltip-html={tooltipContent(factoryData)} 
-            className="buy-button" 
+        <button
+            data-tooltip-id="my-tooltip"
+            data-tooltip-html={tooltipContent(factoryData)}
+            className="buy-button"
             onClick={() => onBuy(factoryType)}
         >
-            <img 
-                src={getFactoryImage(factoryType)} 
-                alt={factoryData.name} 
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+            <img
+                src={getFactoryImage(factoryType)}
+                alt={factoryData.name}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
         </button>
     );
@@ -56,7 +58,7 @@ export const BuyButtons = ({ handleBuyFactory, getFactoryData }: BuyButtonsProps
     const state = useContext(GameContext);
 
     // Array de tipos de factories disponibles
-    const factoryTypes = ['tank', 'sniper', 'dinosaur'];
+    const factoryTypes = ['tank', 'sniper', 'dinosaur', 'hitMarker'];
 
     return (
         <div className="buy-buttons">

@@ -1,0 +1,13 @@
+.sniper-factory {
+    width: 400px;
+    height: 250px;
+    position: absolute;
+    bottom: 70%;
+    right: 10%;
+}
+
+.sniper-factory-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
