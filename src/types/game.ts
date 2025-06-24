@@ -3,11 +3,12 @@ export interface Factory {
   name: string;
   image: string;
   description: string;
+  beersPerSecond: number;
 }
 
 export interface GameState {
-  clicks: number;
-  clickPower: number;
+  beers: number;
+  beerPower: number;
   factories: Factory[];
   allFactoriesMultiplier: number;
 } 
